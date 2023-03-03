@@ -1,0 +1,1 @@
+<view><view><view class="title">这是一个小问题</view><view><radio-group bindchange="{{b}}"><label wx:for="{{a}}" wx:for-item="item" wx:key="c"><view><radio value="{{item.a}}"></radio><view>{{item.b}}</view></view></label></radio-group></view></view><form class="testForm" bindsubmit="{{c}}"><button form-type="submit" size="mini">提交</button></form></view>

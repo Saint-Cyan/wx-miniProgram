@@ -1,0 +1,1 @@
+<view class="mine"><view class="header"><block wx:if="{{a}}"><view>亲爱的用户您好</view><button bindtap="{{b}}" size="mini" type="warn">退出登录</button></block><block wx:if="{{c}}"><text bindtap="{{d}}">去登录</text></block></view></view>

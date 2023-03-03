@@ -1,0 +1,29 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": false,
+		"newFeature": true,
+		"bigPackageSizeSupport": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.30.0",
+	"appid": "wx93d0b5641ff583ec",
+	"projectname": "myProgram",
+	"condition": {},
+	"editorSetting": {
+		"tabIndent": "tab",
+		"tabSize": 4
+	}
+}

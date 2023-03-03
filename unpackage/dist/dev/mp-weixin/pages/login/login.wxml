@@ -1,0 +1,1 @@
+<view><form bindsubmit="{{e}}"><input placeholder="请输入您的账号" type="text" name="userid" value="{{a}}" bindinput="{{b}}"/><input placeholder="请输入您的密码" type="password" name="password" value="{{c}}" bindinput="{{d}}"/><button form-type="submit">登录</button></form></view><view><text bindtap="{{f}}">还没注册？现在开始注册账号</text></view>
