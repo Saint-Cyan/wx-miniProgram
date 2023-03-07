@@ -1,1 +1,0 @@
-<view><form bindsubmit="{{a}}"><input placeholder="请输入您的用户ID" type="text" name="userID"/><input placeholder="请输入您的密码" type="password" name="password"/><input placeholder="请再此输入您的密码" type="password" name="passwordAgain"/><input placeholder="请输入您的手机号码" type="text" name="phoneNumber"/><button form-type="submit">注册</button></form></view>

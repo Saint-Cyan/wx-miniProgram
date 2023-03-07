@@ -1,0 +1,1 @@
+<view class="video-container"><view class="video-playbox-section"><video class="video-playbox" src="{{a}}"></video></view></view>

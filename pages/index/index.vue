@@ -2,7 +2,7 @@
 	<view class = 'container'>
 		
 		<view class="page-section page-section-spacing swiper" @click="toIntroduce">
-			<swiper :indicator-dots="true" :autoplay="true" :circular="true">
+			<swiper :indicator-dots="true" :autoplay="true" :circular="true" @change="showIndex">
 				<block>
 					<swiper-item v-for="(item, index) in swiperList" :key = "index">
 						<image :src="item.image"></image>
@@ -36,14 +36,28 @@
 		data() {
 			return {
 				title: 'Hello',
-				userLevel:"未登录",
+				userLevel: "未登录",
+				playSrc: "http://localhost:7788/public/gaoxueyayufang.mp4",
 				swiperList:[
-					{image:"http://localhost:7788/public/gaoxueya.png"},
-					{image:"http://localhost:7788/public/gaoxueyaweihai.png"},
-					{image:"http://localhost:7788/public/gaoxueyazhuyi.png"}
-				]
+					{
+						image:"http://localhost:7788/public/gaoxueyayufang.png",
+						title:"高血压的危害",
+						source:"http://localhost:7788/public/gaoxueyayufang.mp4"
+					},
+					{
+						image:"http://localhost:7788/public/gaoxueyaweihai.png",
+						title:"高血压危害",
+						source:"http://localhost:7788/public/gaoxueyaweihai.mp4",
+					},
+					{
+						image:"http://localhost:7788/public/gaoxueyazhuyi.png",
+						title:"高血压注意",
+						source:"http://localhost:7788/public/gaoxueyazhuyi.mp4"
+					}
+				],
 			}
 		},
+		
 		onLoad:function(){
 			console.log('page load')
 		},
@@ -94,6 +108,19 @@
 		methods: {
 			updateUserLevel(newLevel){
 				this.userLevel = newLevel
+			},
+			toIntroduce(){
+				const src = this.playSrc
+				uni.navigateTo({
+					url:'/pages/video/video',
+					success(res){
+						res.eventChannel.emit('acceptDataFromOpenerPage',{data:src})
+					}
+				})
+			},
+			showIndex(e){
+				const playSource = this.$data.swiperList[e.detail.current].source
+				this.$set(this.$data,'playSrc',playSource)
 			}
 
 		}

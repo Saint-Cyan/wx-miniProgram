@@ -5,10 +5,23 @@ const _sfc_main = {
     return {
       title: "Hello",
       userLevel: "\u672A\u767B\u5F55",
+      playSrc: "http://localhost:7788/public/gaoxueyayufang.mp4",
       swiperList: [
-        { image: "http://localhost:7788/public/gaoxueya.png" },
-        { image: "http://localhost:7788/public/gaoxueyaweihai.png" },
-        { image: "http://localhost:7788/public/gaoxueyazhuyi.png" }
+        {
+          image: "http://localhost:7788/public/gaoxueyayufang.png",
+          title: "\u9AD8\u8840\u538B\u7684\u5371\u5BB3",
+          source: "http://localhost:7788/public/gaoxueyayufang.mp4"
+        },
+        {
+          image: "http://localhost:7788/public/gaoxueyaweihai.png",
+          title: "\u9AD8\u8840\u538B\u5371\u5BB3",
+          source: "http://localhost:7788/public/gaoxueyaweihai.mp4"
+        },
+        {
+          image: "http://localhost:7788/public/gaoxueyazhuyi.png",
+          title: "\u9AD8\u8840\u538B\u6CE8\u610F",
+          source: "http://localhost:7788/public/gaoxueyazhuyi.mp4"
+        }
       ]
     };
   },
@@ -55,6 +68,19 @@ const _sfc_main = {
   methods: {
     updateUserLevel(newLevel) {
       this.userLevel = newLevel;
+    },
+    toIntroduce() {
+      const src = this.playSrc;
+      common_vendor.index.navigateTo({
+        url: "/pages/video/video",
+        success(res) {
+          res.eventChannel.emit("acceptDataFromOpenerPage", { data: src });
+        }
+      });
+    },
+    showIndex(e) {
+      const playSource = this.$data.swiperList[e.detail.current].source;
+      this.$set(this.$data, "playSrc", playSource);
     }
   }
 };
@@ -66,8 +92,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         b: index
       };
     }),
-    b: common_vendor.o((...args) => _ctx.toIntroduce && _ctx.toIntroduce(...args)),
-    c: common_vendor.t($data.userLevel)
+    b: common_vendor.o((...args) => $options.showIndex && $options.showIndex(...args)),
+    c: common_vendor.o((...args) => $options.toIntroduce && $options.toIntroduce(...args)),
+    d: common_vendor.t($data.userLevel)
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/xyx/Documents/HBuilderProjects/myProgram/pages/index/index.vue"]]);

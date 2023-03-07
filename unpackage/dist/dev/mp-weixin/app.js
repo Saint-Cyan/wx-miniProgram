@@ -5,9 +5,8 @@ if (!Math) {
   "./pages/index/index.js";
   "./pages/mine/mine.js";
   "./pages/learn/learn.js";
-  "./pages/login/login.js";
-  "./pages/enroll/enroll.js";
   "./pages/test/test.js";
+  "./pages/video/video.js";
 }
 const _sfc_main = {
   globalData: {

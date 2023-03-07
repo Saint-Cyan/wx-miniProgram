@@ -18,25 +18,19 @@
 		{
 			"path": "pages/learn/learn",
 			"style": {
-				"navigationBarTitleText": "学习"
-			}
-		},
-		{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "登录"
-			}
-		},
-		{
-			"path": "pages/enroll/enroll",
-			"style": {
-				"navigationBarTitleText": "注册"
+				"navigationBarTitleText": "运动"
 			}
 		},
 		{
 			"path": "pages/test/test",
 			"style": {
 				"navigationBarTitleText": "问卷调查"
+			}
+		},
+		{
+			"path": "pages/video/video",
+			"style": {
+				"navigationBarTitleText": "视频"
 			}
 		}
     ],

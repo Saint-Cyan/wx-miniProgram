@@ -54,7 +54,14 @@
         "setting" : {
             "urlCheck" : false,
             "es6" : true,
-            "postcss" : true
+            "postcss" : true,
+			"packNpmManually":true,
+			"packNpmRelationList":[
+				{
+					"packageJsonPath":"./package.json",
+					"miniprogramNpmDistDir":"./miniprogram/"
+				}
+			]
         },
         "usingComponents" : true
     },
